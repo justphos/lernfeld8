@@ -15,7 +15,7 @@ job("Prepare Docker image") {
             labels["vendor"] = "mycompany"
         }
 
-        push("mycompany.registry.jetbrains.space/p/pythonProject/docker/python_custom_img") {
+        push("marvinfischer.registry.jetbrains.space/p/lf8/containers/myimage:latest") {
             tags{
                 +"0.0.1"
             }
