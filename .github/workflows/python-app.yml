@@ -33,7 +33,3 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: Überprüfung der Code Coverage mit pytest-cov
-      run: |
-        pip install pytest-cov
-        pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
