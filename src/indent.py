@@ -11,7 +11,7 @@ class Indent:
 
     def decrement(self):
         self.level -= 1
-        if self.level == 0:
+        if self.level <= 0:
             self.level = 0
 
     def reset(self):
@@ -30,4 +30,4 @@ class Indent:
         return str(builder)
 
     def __str__(self) -> str:
-        return ' ' * self.level * 4
+        return ' ' * 4 * self.level

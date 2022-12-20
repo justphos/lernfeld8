@@ -1,5 +1,5 @@
 class SQLite3TypeConverter:        
-    def convert(sqlite3_type) -> str:
+    def convert(self, sqlite3_type) -> str:
         match sqlite3_type:
             case "NULL":
                 return "None"
