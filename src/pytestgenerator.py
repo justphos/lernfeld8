@@ -29,8 +29,9 @@ class PytestGenerator:
     def __init__(self) -> None:
         pass
 
-    def generate_files(self, client_document_writer: PytestDocumentWriter):
-        schema_reader = SQLite3SchemaReader(create_connection(r'../test.db'))
+    def generate_files(self, client_document_writer):
+        schema_reader = SQLite3SchemaReader(create_connection(r'test.db'))
+        print(schema_reader)
         for table in schema_reader.get_tables():
             table_gen = PytestTableClassGenerator(table)
             self.write_to_document(
@@ -38,7 +39,7 @@ class PytestGenerator:
                 "entities/" + table.name.lower() + "_generated.py",
                 table_gen.generate()
             )
-            
+
             finder_gen = PytestFinderClassGenerator(table)
             self.write_to_document(
                 client_document_writer,
@@ -46,7 +47,7 @@ class PytestGenerator:
                 finder_gen.generate()
             )
 
-    def write_to_document(self, document_writer: PytestDocumentWriter, relative_path: str, contents: str):
+    def write_to_document(self, document_writer, relative_path: str, contents: str):
         document = PytestDocument()
         document.append_line(contents)
         document_writer.write_document(relative_path, str(document))

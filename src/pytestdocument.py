@@ -10,12 +10,10 @@ class PytestDocument:
         self._string_builder = StringBuilder()
 
     def append_line(self, content: str):
-        print(content)
         return self._string_builder.append_line(content)
 
     def __str__(self) -> str:
         indent = Indent()
-        print("----------------")
         builder = PytestBuilder()
         builder.append_line(indent, "# ----------------")
         builder.append_line(indent, "# Automatically generated document")
