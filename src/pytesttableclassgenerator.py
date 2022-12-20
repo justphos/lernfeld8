@@ -3,6 +3,7 @@ from pytestbuilder import PytestBuilder
 from sqlite3schematable import SQLite3SchemaTable
 from sqlite3typeconverter import SQLite3TypeConverter
 
+
 class PytestTableClassGenerator:
     def __init__(self, table: SQLite3SchemaTable):
         self.table = table
@@ -22,7 +23,7 @@ class PytestTableClassGenerator:
 
         for column in self.table.columns:
             builder.append_line(
-                indent, f"{column.name.lower()}: {SQLite3TypeConverter.convert(column.type)}")
+                indent, f"{column.name.lower()}: {SQLite3TypeConverter().convert(column.type)}")
 
         indent.decrement()
 

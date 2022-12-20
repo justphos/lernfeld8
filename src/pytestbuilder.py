@@ -10,7 +10,7 @@ class PytestBuilder:
     def __init__(self) -> None:
         self._string_builder = StringBuilder()
 
-    def append_line(self, indent: Type[Indent], line: str = ""):
+    def append_line(self, indent: Indent, line: str = ""):
         self._string_builder.append_line(str(indent) + line)
 
     def append(self, content: str):

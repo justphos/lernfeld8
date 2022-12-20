@@ -2,7 +2,6 @@ from sqlite3schemacolumn import SQLite3SchemaColumn
 
 
 def test_SQLite3SchemaColumn():
-    # Test creating a new instance of SQLite3SchemaColumn
     column = SQLite3SchemaColumn(1, 'id', 'INTEGER', 1, None, 1)
     assert column.cid == 1
     assert column.name == 'id'
@@ -11,7 +10,6 @@ def test_SQLite3SchemaColumn():
     assert column.dflt_value is None
     assert column.pk == 1
 
-    # Test updating the values of an existing SQLite3SchemaColumn instance
     column.name = 'name'
     column.type = 'TEXT'
     column.notnull = 0
