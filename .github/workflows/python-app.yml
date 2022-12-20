@@ -31,7 +31,7 @@ jobs:
     - name: Run unit tests with pytest
       run: pytest
     - name: Run performance tests with pytest
-      run: pytest --benchmark-warmup=on --benchmark-autosave=on test_performance_stringbuilder.py
+      run: pytest --benchmark-warmup=on test_performance_stringbuilder.py
     - name: Generate test coverage report
       run: |
         pip install coverage
