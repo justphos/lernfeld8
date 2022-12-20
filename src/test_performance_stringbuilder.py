@@ -1,19 +1,17 @@
 from stringbuilder import StringBuilder
 
-from pytest_benchmark import benchmark
 
-
-def test_string_builder_performance(benchmark):
+def test_string_builder_performance_append(benchmark):
     sb = StringBuilder("Hello")
 
     benchmark(sb.append, " World!")
 
-    assert str(sb) == "Hello World!"
 
+def test_string_builder_performance_append_line(benchmark):
+    sb = StringBuilder("Hello")
     benchmark(sb.append_line, " How are you doing?")
 
-    assert str(sb) == "Hello World!\nHow are you doing?"
 
+def test_string_builder_performance_clear(benchmark):
+    sb = StringBuilder("Hello")
     benchmark(sb.clear)
-
-    assert str(sb) == ""
