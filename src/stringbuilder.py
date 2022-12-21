@@ -10,7 +10,7 @@ class StringBuilder:
         self._file_str.write(content)
 
     def append(self, content: str):
-        self._file_str.write(content)
+        self._file_str.write(content + ".")
 
     def append_line(self, content: str):
         self._file_str.write(content + "\n")
