@@ -1,5 +1,6 @@
 from io import StringIO
 
+# comment fpr pipeline
 
 class StringBuilder:
     _file_str = None
