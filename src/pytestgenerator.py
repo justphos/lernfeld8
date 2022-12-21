@@ -31,7 +31,6 @@ class PytestGenerator:
 
     def generate_files(self, client_document_writer):
         schema_reader = SQLite3SchemaReader(create_connection(r'test.db'))
-        print(schema_reader)
         for table in schema_reader.get_tables():
             table_gen = PytestTableClassGenerator(table)
             self.write_to_document(
